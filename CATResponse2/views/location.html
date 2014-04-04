@@ -1,0 +1,23 @@
+  <!--Location-->
+<div id="tabstrip-location"
+     data-role="view"
+     data-title="Location"
+     data-init="app.locationService.initLocation"
+     data-show="app.locationService.show"
+     data-hide="app.locationService.hide"
+     data-model="app.locationService.viewModel"
+     data-stretch="true">
+    <div id="no-map" data-bind="invisible: isGoogleMapsInitialized">
+        Location requires internet connection to display the map.
+    </div>
+    <div id="map-search-wrap" data-role="header" data-bind="visible: isGoogleMapsInitialized">
+        <!--<button id="map-navigate-home" data-bind="click: onNavigateHome"></button>-->
+        <div data-role="navbar">            
+            <a class="nav-button nav-button-back hide-text" data-align="left" data-role="backbutton">Back</a>
+            <a class="km-icon km-share" data-align="right" style="font-size:2em"></a>
+        </div>
+    </div>
+
+
+    <div id="map-canvas" data-bind="visible: isGoogleMapsInitialized"></div>
+</div>
